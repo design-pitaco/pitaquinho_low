@@ -16,6 +16,11 @@
   padding: 0;
 }
 
+.home__content--muted {
+  filter: grayscale(1) saturate(0);
+  opacity: 0.2;
+}
+
 @media (max-width: 499px) {
   .home {
     position: fixed;
@@ -40,4 +45,9 @@
 .home--no-dividers .winning-now-section {
   border-bottom: none;
   padding: 0 0 24px 0;
+}
+
+.home__content .prematch-section:last-child,
+.home__content .calendar-section:last-child {
+  padding-bottom: 0;
 }

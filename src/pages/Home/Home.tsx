@@ -99,51 +99,52 @@ export function Home() {
           />
         )}
       </Header>
-      <TrilhoEBanner hideBanner={!!activeSport} />
-      {activeSport ? (
-        <Fragment key={`sport-${activeSport}-${contentResetKey}`}>
-          {selectedCompetition ? (
-            <CompetitionPage
-              sport={activeSport}
-              competitionId={selectedCompetition.id}
-              onLiveMatchClick={handleLiveMatchClick}
-            />
-          ) : (
-            <>
-              <OffersSection sportFilter={activeSport} />
-              <CalendarSection
-                sportFilter={activeSport}
+      <main className="home__content home__content--muted">
+        <TrilhoEBanner hideBanner={!!activeSport} />
+        {activeSport ? (
+          <Fragment key={`sport-${activeSport}-${contentResetKey}`}>
+            {selectedCompetition ? (
+              <CompetitionPage
+                sport={activeSport}
+                competitionId={selectedCompetition.id}
                 onLiveMatchClick={handleLiveMatchClick}
-                onOpenCompetition={handleOpenCompetition}
               />
-            </>
-          )}
-        </Fragment>
-      ) : (
-        <Fragment key={`destaques-${contentResetKey}`}>
-          {/* <ContentTabs /> */}
-          {isVariant2 ? (
-            <>
-              <OffersSection />
-              <PromotionSection />
-            </>
-          ) : (
-            <>
-              <PromotionSection />
-              <OffersSection />
-            </>
-          )}
-          <LiveSection
-            onMatchClick={handleLiveMatchClick}
-            onOpenCompetition={handleOpenCompetition}
-          />
-          <EscadinhaSection />
-          <PreMatchSection onOpenCompetition={handleOpenCompetition} />
-          {/* <TreasureSection /> */}
-          {/* <WinningNowSection /> */}
-        </Fragment>
-      )}
-      <main className="home__content" />
+            ) : (
+              <>
+                <OffersSection sportFilter={activeSport} />
+                <CalendarSection
+                  sportFilter={activeSport}
+                  onLiveMatchClick={handleLiveMatchClick}
+                  onOpenCompetition={handleOpenCompetition}
+                />
+              </>
+            )}
+          </Fragment>
+        ) : (
+          <Fragment key={`destaques-${contentResetKey}`}>
+            {/* <ContentTabs /> */}
+            {isVariant2 ? (
+              <>
+                <OffersSection />
+                <PromotionSection />
+              </>
+            ) : (
+              <>
+                <PromotionSection />
+                <OffersSection />
+              </>
+            )}
+            <LiveSection
+              onMatchClick={handleLiveMatchClick}
+              onOpenCompetition={handleOpenCompetition}
+            />
+            <EscadinhaSection />
+            <PreMatchSection onOpenCompetition={handleOpenCompetition} />
+            {/* <TreasureSection /> */}
+            {/* <WinningNowSection /> */}
+          </Fragment>
+        )}
+      </main>
 
       {selectedLiveMatch && (
         <LiveEventPage
