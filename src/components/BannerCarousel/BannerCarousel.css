@@ -40,11 +40,113 @@
   scroll-snap-align: center;
 }
 
+.banner-card__wire-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  padding: 8px 20px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #202020;
+  border-radius: 12px 12px 0 0;
+  box-sizing: border-box;
+  opacity: 0.9;
+}
+
+.banner-card__wire-header-block {
+  display: block;
+  height: 13px;
+  background-color: #202020;
+}
+
+.banner-card__wire-header-block--short {
+  width: 27px;
+}
+
+.banner-card__wire-header-block--long {
+  width: 72px;
+}
+
+.banner-card__wire-content {
+  display: flex;
+  align-items: center;
+  height: 151px;
+  padding: 16px 20px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  border-radius: 0 0 12px 12px;
+  box-sizing: border-box;
+}
+
+.banner-card__wire-inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.banner-card__wire-teams {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  height: 63px;
+}
+
+.banner-card__wire-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 20px;
+}
+
+.banner-card__wire-score {
+  display: block;
+  width: 24px;
+  height: 20px;
+  flex-shrink: 0;
+  background-color: #202020;
+  border-radius: 4px;
+}
+
+.banner-card__wire-dot {
+  display: block;
+  width: 4px;
+  height: 4px;
+  flex-shrink: 0;
+  background-color: #202020;
+  border-radius: 50%;
+}
+
+.banner-card__wire-name {
+  display: block;
+  width: 110px;
+  height: 19px;
+  background-color: #202020;
+}
+
+.banner-card__wire-odds {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  width: 100%;
+}
+
+.banner-card__wire-odd {
+  display: block;
+  flex: 1;
+  height: 40px;
+  min-width: 0;
+  background-color: #202020;
+  border-radius: 8px;
+}
+
 .banner-card__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   padding: 8px 20px;
   border-radius: 12px 12px 0 0;
   height: 28px;
@@ -52,34 +154,43 @@
 }
 
 .banner-card__header-left {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
+  display: block;
+  width: 82px;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 0;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
 }
 
 .banner-card__header-right {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
+  color: transparent;
+  font-size: 0;
+}
+
+.banner-card__header-right span:not(.banner-card__timer-dot) {
+  display: block;
+  width: 82px;
+  height: 8px;
+  overflow: hidden;
+  background-color: #202020;
 }
 
 .banner-card__timer-dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
-  background-color: #AD0924;
+  border-radius: 0;
+  background-color: #202020;
 }
 
 .banner-card__content {
   height: 151px;
   border-radius: 0 0 12px 12px;
-  background-size: cover;
-  background-position: center;
+  background: #202020 !important;
   padding: 16px 20px;
   display: flex;
   align-items: center;
@@ -110,10 +221,12 @@
 }
 
 .banner-card__title {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: #ffffff;
+  width: 120px;
+  height: 16px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: transparent;
+  font-size: 0;
   margin: 0;
   line-height: 1.36;
   display: flex;
@@ -126,19 +239,20 @@
 }
 
 .banner-card__boost-icon {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
+  display: none;
 }
 
 .banner-card__description {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: #ffffff;
+  width: 144px;
   margin: 0;
-  line-height: 1.08;
   height: 40px;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+  background:
+    linear-gradient(#1a1a1a, #1a1a1a) 0 0 / 100% 10px no-repeat,
+    linear-gradient(#1a1a1a, #1a1a1a) 0 14px / 86% 10px no-repeat,
+    linear-gradient(#1a1a1a, #1a1a1a) 0 28px / 70% 10px no-repeat;
 }
 
 /* Buttons */
@@ -151,13 +265,11 @@
 .banner-card__btn {
   height: 40px;
   padding: 10px 14px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   border: none;
   border-radius: 1000px;
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
+  color: transparent;
+  font-size: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -171,8 +283,7 @@
 }
 
 .banner-card__btn--icon img {
-  width: 24px;
-  height: 24px;
+  display: none;
 }
 
 /* Odds 1x2 */
@@ -185,7 +296,7 @@
 .banner-card__odd-btn {
   flex: 1;
   min-height: 40px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   border: none;
   border-radius: 10px;
   display: flex;
@@ -197,26 +308,29 @@
 }
 
 .banner-card__odd-team {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  color: #ffffff;
-  text-align: center;
-  line-height: 1.2;
+  width: 46px;
+  height: 8px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
 }
 
 .banner-card__odd-value {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #ffffff;
+  width: 32px;
+  height: 9px;
+  margin-top: 4px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
 }
 
 /* Boosted Odd */
 .banner-card__boosted-btn {
   width: 100%;
   height: 40px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   border: none;
   border-radius: 10px;
   display: flex;
@@ -227,23 +341,31 @@
 }
 
 .banner-card__old-odd {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
-  text-decoration: line-through;
+  display: block;
+  width: 40px;
+  height: 9px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
+  text-decoration: none;
 }
 
 .banner-card__arrow {
+  display: block;
   width: 12px;
-  height: 12px;
+  height: 8px;
+  background-color: #202020;
 }
 
 .banner-card__new-odd {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #ffffff;
+  display: block;
+  width: 44px;
+  height: 9px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
 }
 
 /* Activated Mission Button */
@@ -253,7 +375,7 @@
   gap: 8px;
   height: 40px;
   padding: 0 14px;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   border: none;
   border-radius: 1000px;
   cursor: pointer;
@@ -269,24 +391,23 @@
 }
 
 .banner-card__btn-activated-icon {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
+  display: none;
 }
 
 .banner-card__btn-activated-left span {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1;
-  white-space: nowrap;
+  display: block;
+  width: 54px;
+  height: 9px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
 }
 
 .banner-card__btn-activated-divider {
   width: 1px;
   height: 16px;
-  background-color: #32a866;
+  background-color: #202020;
   flex-shrink: 0;
 }
 
@@ -298,21 +419,24 @@
 }
 
 .banner-card__btn-activated-label {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  color: #ffffff;
-  line-height: 1;
-  white-space: nowrap;
+  display: block;
+  width: 52px;
+  height: 7px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
 }
 
 .banner-card__btn-activated-value {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1;
-  white-space: nowrap;
+  display: block;
+  width: 72px;
+  height: 8px;
+  margin-top: 3px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
 }
 
 /* Bullets */
@@ -327,7 +451,7 @@
   width: 6px;
   height: 6px;
   border-radius: 3px;
-  background-color: #333333;
+  background-color: #202020;
   transition: width 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -335,7 +459,7 @@
 
 .banner-carousel__bullet--active {
   width: 16px;
-  background-color: #333333;
+  background-color: #1a1a1a;
 }
 
 .banner-carousel__bullet-progress {
@@ -345,7 +469,7 @@
   height: 100%;
   width: 0;
   opacity: 0.8;
-  background: linear-gradient(87deg, #4B20FF 2.73%, #9730FF 128.78%);
+  background: #202020;
   border-radius: 3px;
   animation: bulletProgress 10s linear forwards;
 }
@@ -762,4 +886,3 @@
   font-weight: 700;
   color: #ffffff;
 }
-

@@ -56,6 +56,8 @@ const filterChips: FilterChip[] = [
   { id: 'pechinchas', label: 'Pechinchas' },
 ]
 
+const LOW_FI_OFFERS = true
+
 interface OfferCard {
   id: string
   type: 'combinada' | 'super_combinada' | 'super_aumentada' | 'aumentada' | 'pechincha'
@@ -1123,6 +1125,40 @@ export function OffersSection({ sportFilter, liveOnly = false }: OffersSectionPr
         onMouseLeave={handleMouseLeave}
       >
         {filteredOffers.map((offer) => {
+          if (LOW_FI_OFFERS) {
+            return (
+              <div key={offer.id} className={`offer-card offer-card--wire offer-card--${offer.type.replace('_', '-')}`}>
+                <div className="offer-card__wire-content">
+                  <div className="offer-card__wire-header">
+                    <span className="offer-card__wire-title" />
+                    <span className="offer-card__wire-tag" />
+                  </div>
+
+                  <div className="offer-card__wire-match">
+                    <div className="offer-card__wire-match-left">
+                      <span className="offer-card__wire-match-name" />
+                    </div>
+                    <span className="offer-card__wire-date" />
+                  </div>
+
+                  <div className="offer-card__wire-player">
+                    <span className="offer-card__wire-avatar" />
+                    <div className="offer-card__wire-player-info">
+                      <span className="offer-card__wire-player-name" />
+                      <span className="offer-card__wire-player-team" />
+                    </div>
+                    <div className="offer-card__wire-player-stat">
+                      <span className="offer-card__wire-stat-value" />
+                      <span className="offer-card__wire-stat-label" />
+                    </div>
+                  </div>
+
+                  <span className="offer-card__wire-button" />
+                </div>
+              </div>
+            )
+          }
+
           const liveTime = getOfferLiveTime(offer)
 
           return (

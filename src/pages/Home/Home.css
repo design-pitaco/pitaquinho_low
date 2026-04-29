@@ -16,11 +16,6 @@
   padding: 0;
 }
 
-.home__content--muted {
-  filter: grayscale(1) saturate(0);
-  opacity: 0.2;
-}
-
 @media (max-width: 499px) {
   .home {
     position: fixed;
@@ -50,4 +45,66 @@
 .home__content .prematch-section:last-child,
 .home__content .calendar-section:last-child {
   padding-bottom: 0;
+}
+
+.home__content .promotion-section__header,
+.home__content .offers-section__header,
+.home__content .live-section__header,
+.home__content .escadinha-section__header,
+.home__content .prematch-section__header,
+.home__content .treasure-section__header,
+.home__content .winning-now-section__header {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 19px;
+}
+
+.home__content .promotion-section__title,
+.home__content .offers-section__title,
+.home__content .live-section__title,
+.home__content .escadinha-section__title,
+.home__content .prematch-section__title,
+.home__content .treasure-section__title,
+.home__content .winning-now-section__title {
+  display: block;
+  width: 198px;
+  height: 19px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.home__content .promotion-section__title > *,
+.home__content .offers-section__title > *,
+.home__content .live-section__title > *,
+.home__content .escadinha-section__title > *,
+.home__content .prematch-section__title > *,
+.home__content .treasure-section__title > *,
+.home__content .winning-now-section__title > * {
+  display: none;
+}
+
+.home__content .promotion-section__arrow,
+.home__content .live-section__arrow,
+.home__content .prematch-section__arrow,
+.home__content .treasure-section__arrow,
+.home__content .winning-now-section__arrow,
+.home__content .escadinha-section__help {
+  display: none;
+}
+
+.home__content .competition-players__header,
+.home__content .competition-longterm__header {
+  width: 198px;
+  height: 19px;
+  margin: 0 12px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
 }

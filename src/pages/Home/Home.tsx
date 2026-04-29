@@ -4,7 +4,6 @@ import { TrilhoEBanner } from '../../components/TrilhoEBanner'
 import { PromotionSection } from '../../components/PromotionSection'
 import { OffersSection } from '../../components/OffersSection'
 import { LiveSection } from '../../components/LiveSection'
-import { EscadinhaSection } from '../../components/EscadinhaSection'
 import { PreMatchSection } from '../../components/PreMatchSection'
 import { SportFilterBar } from '../../components/SportFilterBar'
 import { CalendarSection } from '../../components/CalendarSection'
@@ -99,7 +98,7 @@ export function Home() {
           />
         )}
       </Header>
-      <main className="home__content home__content--muted">
+      <main className="home__content">
         <TrilhoEBanner hideBanner={!!activeSport} />
         {activeSport ? (
           <Fragment key={`sport-${activeSport}-${contentResetKey}`}>
@@ -138,7 +137,6 @@ export function Home() {
               onMatchClick={handleLiveMatchClick}
               onOpenCompetition={handleOpenCompetition}
             />
-            <EscadinhaSection />
             <PreMatchSection onOpenCompetition={handleOpenCompetition} />
             {/* <TreasureSection /> */}
             {/* <WinningNowSection /> */}

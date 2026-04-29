@@ -221,6 +221,7 @@ const banners: Banner[] = [
 ]
 
 const AUTO_PLAY_INTERVAL = 10000 // 10 segundos
+const LOW_FI_HOME_BANNERS = true
 
 // Helper function to parse match time string
 function parseMatchTime(timeStr: string): { period: number; minutes: number; seconds: number; isQuarter: boolean } {
@@ -525,6 +526,36 @@ export function BannerCarousel() {
       >
         {banners.map((banner) => (
           <div key={banner.id} className="banner-card">
+            {LOW_FI_HOME_BANNERS && (
+              <>
+                <div className="banner-card__wire-header">
+                  <span className="banner-card__wire-header-block banner-card__wire-header-block--short" />
+                  <span className="banner-card__wire-header-block banner-card__wire-header-block--long" />
+                </div>
+                <div className="banner-card__wire-content">
+                  <div className="banner-card__wire-inner">
+                    <div className="banner-card__wire-teams">
+                      <div className="banner-card__wire-row">
+                        <span className="banner-card__wire-score" />
+                        <span className="banner-card__wire-dot" />
+                        <span className="banner-card__wire-name" />
+                      </div>
+                      <div className="banner-card__wire-row">
+                        <span className="banner-card__wire-score" />
+                        <span className="banner-card__wire-dot" />
+                        <span className="banner-card__wire-name" />
+                      </div>
+                    </div>
+                    <div className="banner-card__wire-odds">
+                      <span className="banner-card__wire-odd" />
+                      <span className="banner-card__wire-odd" />
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+            {!LOW_FI_HOME_BANNERS && (
+              <>
             {/* Header */}
             <div className="banner-card__header">
               {banner.type === 'aoVivo' || banner.type === 'aoVivoTenis' ? (
@@ -789,6 +820,8 @@ export function BannerCarousel() {
               </div>
               )}
             </div>
+              </>
+            )}
           </div>
         ))}
       </div>

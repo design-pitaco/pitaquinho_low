@@ -1,12 +1,6 @@
 import { useState, useRef } from 'react'
 import './PromotionSection.css'
 
-// Images for cards
-import imgMissaoVerdao from '../../assets/imgMissaoVerdao.png'
-import imgPagamentoAntecipado from '../../assets/img-promo-pagamento-antecipado-futebol.png'
-import imgFlamengo from '../../assets/bgFlamengo.png'
-import imgRatinho from '../../assets/img-ratinho.png'
-import imgTesouroRei from '../../assets/img-promo-tesouro-do-rei.png'
 import setaLink from '../../assets/setaLink.png'
 
 interface Promotion {
@@ -17,7 +11,6 @@ interface Promotion {
   label: string[]
   title: string
   description: string
-  image: string
 }
 
 const promotions: Promotion[] = [
@@ -29,7 +22,6 @@ const promotions: Promotion[] = [
     label: ['Missão'],
     title: 'Aposte no Verdão e ganhe R$50!',
     description: 'Aposte R$50 no jogo do Palmeiras na Liberta e ganhe R$10 em créditos.',
-    image: imgMissaoVerdao,
   },
   {
     id: '2',
@@ -39,7 +31,6 @@ const promotions: Promotion[] = [
     label: ['Pagamento', 'Antecipado'],
     title: 'Fature até 200% na múltipla.',
     description: 'Se o time abrir dois gols, seu pagamento já cai na conta.',
-    image: imgPagamentoAntecipado,
   },
   {
     id: '3',
@@ -49,7 +40,6 @@ const promotions: Promotion[] = [
     label: ['Missão'],
     title: 'Ganhe R$5 no brasileirão.',
     description: 'Aposte R$50 no jogo do Flamengo e ganhe mais 20 coroas.',
-    image: imgFlamengo,
   },
   {
     id: '4',
@@ -59,7 +49,6 @@ const promotions: Promotion[] = [
     label: ['Missão'],
     title: 'Missão Ratinho',
     description: 'Aposte R$20 no jogo do Ratinho Sortudo e ganhe 5 Rodadas.',
-    image: imgRatinho,
   },
   {
     id: '5',
@@ -69,7 +58,6 @@ const promotions: Promotion[] = [
     label: ['Tesouro', 'do Rei'],
     title: 'Tesouro do Rei',
     description: 'Quanto mais você jogar mais chaves irá conseguir.',
-    image: imgTesouroRei,
   },
 ]
 
@@ -124,7 +112,6 @@ export function PromotionSection() {
         {promotions.map((promo) => (
           <div key={promo.id} className="promo-card">
             <div className="promo-card__image-wrapper">
-              <img src={promo.image} alt="" className="promo-card__image" />
               <div className="promo-card__label">
                 {promo.label.map((line, i) => (
                   <p key={i}>{line}</p>

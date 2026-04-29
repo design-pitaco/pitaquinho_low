@@ -189,45 +189,36 @@
 }
 
 .escadinha-card__stat {
-  flex: 1 0 auto;
+  flex: 0 0 99px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0;
+  width: 99px;
   height: 24px;
-  padding: 0 16px;
+  padding: 0;
   border-radius: 160px;
   border: none;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
+  font-size: 0;
   font-weight: 700;
-  color: #a8a8a8;
+  color: transparent;
   white-space: nowrap;
   cursor: pointer;
   text-align: center;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .escadinha-card__stat--active {
-  background: linear-gradient(45deg, rgba(82, 40, 255, 0.56) 0.62%, rgba(174, 24, 255, 0.56) 100%), #131313;
-  color: #ffffff;
+  background: #202020;
+  color: transparent;
   position: relative;
 }
 
 .escadinha-card__stat--active::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 160px;
-  padding: 1px;
-  background: linear-gradient(45deg, rgba(82, 40, 255, 0.56) 0.62%, rgba(174, 24, 255, 0.56) 100%);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  display: none;
 }
 
 /* Range Slider */
