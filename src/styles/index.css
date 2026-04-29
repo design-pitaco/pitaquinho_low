@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+  /* Cores principais */
+  --color-primary: #164c2e;
+  --color-primary-light: #1a5c38;
+  --color-background: #171717;
+  --color-surface: #1a1a1a;
+  --color-white: #ffffff;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --app-viewport-height: 100vh;
+
+  /* Tipografia */
+  font-family: 'Red Hat Text', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--color-text);
+  /* background-color removido daqui para ser específico no html/body */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --app-viewport-height: 100dvh;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  background-color: var(--color-background);
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: pan-x pan-y;
+  -webkit-touch-callout: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  background-color: var(--color-background);
+  overscroll-behavior: none;
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Previne zoom em double-tap e pinch */
+* {
+  touch-action: pan-x pan-y;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media (max-width: 499px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: var(--app-viewport-height);
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  body {
+    position: fixed;
+    inset: 0;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

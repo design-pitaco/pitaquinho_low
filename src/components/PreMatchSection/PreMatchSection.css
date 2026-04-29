@@ -1,0 +1,476 @@
+.prematch-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 0 24px 0;
+  border-bottom: 2px solid #242424;
+}
+
+/* Header */
+.prematch-section__header {
+  display: flex;
+  align-items: center;
+  
+  padding: 0 12px;
+  height: 20px;
+}
+
+.prematch-section__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prematch-section__title span {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.prematch-section__arrow {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Chips */
+.prematch-section__chips {
+  display: flex;
+  gap: 8px;
+  padding: 0 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.prematch-section__chips::-webkit-scrollbar {
+  display: none;
+}
+
+/* .prematch-section__chips--sticky {
+  position: sticky;
+  top: 135px;
+  background: transparent;
+  z-index: 100;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -8px;
+}
+
+.prematch-section__chips--sticky.prematch-section__chips--scrolling {
+  z-index: 1000;
+} */
+
+.prematch-section__chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 24px;
+  padding: 0 16px;
+  border-radius: 160px;
+  border: none;
+  background-color: #1A1A1A;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.prematch-section__chip span {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #a8a8a8;
+  white-space: nowrap;
+}
+
+.prematch-section__chip--active {
+  background: linear-gradient(45deg, rgba(82, 40, 255, 0.56) 0.62%, rgba(174, 24, 255, 0.56) 100%), #131313;
+  position: relative;
+}
+
+.prematch-section__chip--active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 160px;
+  padding: 1px;
+  background: linear-gradient(45deg, rgba(82, 40, 255, 0.56) 0.62%, rgba(174, 24, 255, 0.56) 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.prematch-section__chip--active span {
+  color: #ffffff;
+}
+
+.prematch-section__chip--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.prematch-section__chip-icon {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+/* Leagues */
+.prematch-section__leagues {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.prematch-section__league {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.prematch-section__league--open {
+  margin-bottom: 12px;
+}
+
+.prematch-section__league:last-child.prematch-section__league--open {
+  margin-bottom: 8px;
+}
+
+.calendar-section--competition .prematch-section__league:last-child.prematch-section__league--open {
+  margin-bottom: 0;
+}
+
+.prematch-section__league::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background-color: #1e1e1e;
+}
+
+.prematch-section__league--open::after {
+  display: none;
+}
+
+.prematch-section__league-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prematch-section__league-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prematch-section__league-title span {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.prematch-section__league-flag {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.prematch-section__accordion-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+}
+
+.prematch-section__accordion-icon--open {
+  transform: rotate(0deg);
+}
+
+/* Matches Wrapper (for animation) */
+.prematch-section__matches-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.prematch-section__matches-wrapper--open {
+  grid-template-rows: 1fr;
+}
+
+.prematch-section__matches-inner {
+  overflow: hidden;
+}
+
+/* Matches */
+.prematch-section__matches {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px;
+}
+
+.prematch-section__match {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+}
+
+.prematch-section__match-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.prematch-section__teams-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  flex: 1;
+}
+
+.prematch-section__team-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+  min-width: 0;
+  flex: 1;
+}
+
+.prematch-section__team-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.prematch-section__team-icon--placeholder {
+  width: 16px;
+  height: 16px;
+  background-color: #3a3a3a;
+  border-radius: 2px;
+}
+
+.prematch-section__team-icon--basketball-home {
+  border-radius: 100%;
+  border: 1px solid #00A0DD;
+  padding: 3px;
+}
+
+.prematch-section__team-icon--basketball-away {
+  border-radius: 100%;
+  border: 1px solid #AD0924;
+  padding: 3px;
+}
+
+.prematch-section__team-icon--sport-home {
+  border-radius: 100%;
+  border: 1px solid #00A0DD;
+  padding: 3px;
+}
+
+.prematch-section__team-icon--sport-away {
+  border-radius: 100%;
+  border: 1px solid #AD0924;
+  padding: 3px;
+}
+
+.prematch-section__team-name {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.prematch-section__match-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prematch-section__match-datetime {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.prematch-section__match-arrow {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-left: 4px;
+  padding-left: 4px;
+  border-left: 1px solid #202020;
+  box-sizing: content-box;
+}
+
+/* Pag. Antecipado */
+.prematch-section__match-info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.prematch-section__pag-antecipado {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.prematch-section__pag-antecipado-label {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 8px;
+  background-color: #202020;
+  padding: 0 4px;
+  font-weight: 500;
+  color: #a8a8a8;
+  text-transform: uppercase;
+  border-radius: 2px 0 0 2px;
+}
+
+.prematch-section__rei-antecipa {
+  width: 20px;
+  height: 12px;
+  object-fit: contain;
+}
+
+/* Odds */
+.prematch-section__odds {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.prematch-section__odd-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  height: 40px;
+  padding: 0 8px;
+  background-color: #242424;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.prematch-section__odd-team {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+.prematch-section__odd-value {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* League More Button (flat) */
+.prematch-section__league-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.prematch-section__league-more span {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.prematch-section__league-more-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* More Button */
+.prematch-section__more {
+  padding: 0 12px;
+  margin-top: -12px;
+}
+
+.prematch-section__more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 14px 16px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+.prematch-section__more-btn span {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.prematch-section__more-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Clickable info content */
+.prematch-section__match-info-content--clickable {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}

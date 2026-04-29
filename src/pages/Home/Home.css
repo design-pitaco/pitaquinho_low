@@ -1,0 +1,43 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #131313;
+  padding-top: 148px;
+  padding-bottom: 60px;
+}
+
+.home--sport-active {
+  padding-top: 196px;
+}
+
+.home__content {
+  flex: 1;
+  padding: 0;
+}
+
+@media (max-width: 499px) {
+  .home {
+    position: fixed;
+    inset: 0;
+    height: var(--app-viewport-height);
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Padrão e v2 - Sem dividers */
+.home--no-dividers .promotion-section,
+.home--no-dividers .offers-section,
+.home--no-dividers .live-section,
+.home--no-dividers .escadinha-section,
+.home--no-dividers .prematch-section,
+.home--no-dividers .treasure-section,
+.home--no-dividers .winning-now-section {
+  border-bottom: none;
+  padding: 0 0 24px 0;
+}

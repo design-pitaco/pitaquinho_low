@@ -1,0 +1,506 @@
+/* Container */
+.bottom-sheet__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Overlay */
+.bottom-sheet__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.2s ease-out;
+  pointer-events: auto;
+}
+
+.bottom-sheet__overlay--blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.bottom-sheet__overlay--closing {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* Bottom Sheet Container */
+.bottom-sheet {
+  position: relative;
+  background-color: #1a1a1a;
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  /* Fallback for older browsers */
+  max-height: calc(100vh - 80px);
+  /* Dynamic viewport height for modern browsers */
+  max-height: calc(100dvh - 80px);
+  /* JavaScript calculated viewport height for mobile browser chrome changes */
+  max-height: calc(var(--app-viewport-height, 100dvh) - 80px);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease-out;
+  pointer-events: auto;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.bottom-sheet--closing {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Header - Fixed */
+.bottom-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 12px 20px;
+  border-bottom: 1px solid #242424;
+  flex-shrink: 0;
+}
+
+.bottom-sheet__header--no-title {
+  border-bottom: none;
+}
+
+.bottom-sheet__title-spacer {
+  flex: 1;
+}
+
+.bottom-sheet__title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bottom-sheet__title-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 2px;
+  border: 1px solid #19954f;
+}
+
+.bottom-sheet__title span {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.bottom-sheet__close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bottom-sheet__close-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Body - Scrollable */
+.bottom-sheet__body-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-sheet__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 0;
+}
+
+.bottom-sheet__scroll-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, #1a1a1a 0%, transparent 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.bottom-sheet__scroll-indicator--hidden {
+  opacity: 0;
+}
+
+/* Footer - Fixed */
+.bottom-sheet__footer {
+  padding: 20px;
+  border-top: 1px solid #242424;
+  flex-shrink: 0;
+}
+
+/* Mission Content Styles */
+.mission-description {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+  padding: 0 20px;
+  margin: 0 0 16px 0;
+}
+
+.mission-box {
+  margin: 0 20px;
+}
+
+.mission-box__header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 20px;
+  border: 1px solid #242424;
+  border-radius: 4px 4px 0 0;
+}
+
+.mission-box__content {
+  background-color: #242424;
+  border: 1px solid #242424;
+  border-radius: 0 0 8px 8px;
+  padding: 20px;
+}
+
+.mission-box__title {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+}
+
+/* Mission Progress Bar */
+.mission-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.mission-progress__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mission-progress__label {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.mission-progress__value {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #32a866;
+  line-height: 1.4;
+}
+
+.mission-progress__bar {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background-color: #373737;
+  border-radius: 3px;
+}
+
+.mission-progress__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #32a866;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.mission-progress__dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #32a866;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #242424;
+  transition: left 0.3s ease;
+}
+
+/* Mission Timer */
+.mission-timer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mission-timer__dot {
+  width: 8px;
+  height: 8px;
+  background-color: #c00a28;
+  border-radius: 50%;
+}
+
+.mission-timer__text {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* Mission Objective */
+.mission-objective {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mission-objective__radio {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #32a866;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mission-objective__radio--completed {
+  background-color: #32a866;
+}
+
+.mission-objective__check {
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.mission-objective__text {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* Mission Info Section */
+.mission-info-section {
+  padding: 0 20px;
+  margin-top: 28px;
+}
+
+.mission-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #242424;
+  cursor: pointer;
+}
+
+.mission-info-header__title {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #32a866;
+  line-height: 1;
+}
+
+.mission-info-header__icon {
+  width: 16px;
+  height: 16px;
+  transform: rotate(-360deg);
+  filter: brightness(0) saturate(100%) invert(52%) sepia(94%) saturate(371%) hue-rotate(101deg) brightness(93%) contrast(88%);
+}
+
+/* Mission Info Row */
+.mission-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #242424;
+}
+
+.mission-info-row:last-child {
+  border-bottom: none;
+}
+
+.mission-info-row__label {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #e3e3e3;
+  line-height: 1;
+}
+
+.mission-info-row__value {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  text-align: right;
+}
+
+/* Mission FAQ */
+.mission-faq {
+  margin-top: 0;
+}
+
+.mission-faq-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px 0;
+  border-top: 1px solid #242424;
+}
+
+.mission-faq-item:last-child {
+  border-bottom: none;
+}
+
+.mission-faq-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mission-faq-item__question {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.mission-faq-item--expanded .mission-faq-item__question {
+  color: #32a866;
+}
+
+.mission-faq-item__icon {
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.mission-faq-item--expanded .mission-faq-item__icon {
+  filter: brightness(0) saturate(100%) invert(52%) sepia(94%) saturate(371%) hue-rotate(101deg) brightness(93%) contrast(88%);
+}
+
+.mission-faq-item__icon--rotated {
+  transform: rotate(0deg);
+}
+
+.mission-faq-item__answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.mission-faq-item--expanded .mission-faq-item__answer-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.mission-faq-item__answer {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.4;
+  margin: 0;
+  text-align: left;
+  overflow: hidden;
+  padding-top: 0;
+  transition: padding-top 0.3s ease;
+}
+
+.mission-faq-item--expanded .mission-faq-item__answer {
+  padding-top: 16px;
+}
+
+/* Primary Button */
+.bottom-sheet__btn-primary {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #32a866;
+  border: none;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+.bottom-sheet__btn-primary span {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}

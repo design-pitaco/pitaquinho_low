@@ -1,0 +1,121 @@
+.treasure-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 0 24px 0;
+  border-bottom: 2px solid #242424;
+}
+
+.treasure-section__header {
+  display: flex;
+  align-items: center;
+  
+  padding: 0 12px;
+  height: 20px;
+}
+
+.treasure-section__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.treasure-section__arrow {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+}
+
+.treasure-section__box-wrapper {
+  padding: 0 12px;
+}
+
+.treasure-section__box {
+  display: flex;
+  align-items: center;
+  height: 112px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  background-size: auto 100%;
+  background-position: right center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.treasure-section__content {
+  display: flex;
+  flex-direction: column;
+  
+  flex: 1;
+  height: 100%;
+}
+
+.treasure-section__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.treasure-section__label {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.treasure-section__value {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #32a866;
+  line-height: 1.2;
+  display: flex;
+  align-items: baseline;
+}
+
+.treasure-value__prefix {
+  margin-right: 2px;
+}
+
+.treasure-value__number {
+  display: inline-flex;
+}
+
+/* Animated Digits */
+.treasure-digit {
+  display: inline-block;
+}
+
+.treasure-digit--static {
+  /* Static characters like . and , */
+}
+
+.treasure-digit__inner {
+  display: inline-block;
+}
+
+.treasure-section__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 16px;
+  background-color: #32a866;
+  border: none;
+  border-radius: 1000px;
+  cursor: pointer;
+  width: fit-content;
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  white-space: nowrap;
+}
