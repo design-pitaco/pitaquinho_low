@@ -1,10 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './PreMatchSection.css'
 import { getTeamLogo } from '../../data/teamLogos'
-import {
-  getCompetitionLinkTarget,
-  type CompetitionLinkTarget,
-} from '../../utils/competitionNavigation'
 
 import setaLink from '../../assets/setaLink.png'
 import iconFutebol from '../../assets/iconFutebol.png'
@@ -150,10 +146,6 @@ interface League {
   isOpen: boolean
   matches: Match[]
   sport: string
-}
-
-interface PreMatchSectionProps {
-  onOpenCompetition?: (target: CompetitionLinkTarget) => void
 }
 
 const sportChips: SportChip[] = [
@@ -594,7 +586,7 @@ const leagues: League[] = [
   },
   ]
 
-export function PreMatchSection({ onOpenCompetition }: PreMatchSectionProps = {}) {
+export function PreMatchSection() {
   const [activeSport, setActiveSport] = useState('futebol')
   const [activeMarket, setActiveMarket] = useState('resultado-final')
   const [openLeagues, setOpenLeagues] = useState<string[]>(
@@ -640,12 +632,6 @@ export function PreMatchSection({ onOpenCompetition }: PreMatchSectionProps = {}
   // Get current market chips and filtered leagues based on sport
   const currentMarketChips = activeSport === 'basquete' ? basketballMarketChips : footballMarketChips
   const filteredLeagues = leagues.filter((l) => l.sport === activeSport)
-
-  const openCompetitionFromLeague = (leagueId: string) => {
-    const target = getCompetitionLinkTarget(leagueId)
-    if (!target) return
-    onOpenCompetition?.(target)
-  }
 
   const toggleLeague = (leagueId: string) => {
     setOpenLeagues((prev) =>
@@ -948,14 +934,6 @@ export function PreMatchSection({ onOpenCompetition }: PreMatchSectionProps = {}
                       </div>
                     ))}
                   </div>
-                  <button
-                    type="button"
-                    className="prematch-section__league-more"
-                    onClick={() => openCompetitionFromLeague(league.id)}
-                  >
-                    <span>Veja mais {league.name}</span>
-                    <img src={setaLink} alt="" className="prematch-section__league-more-icon" />
-                  </button>
                 </div>
               </div>
             )}

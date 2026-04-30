@@ -137,7 +137,7 @@ export function Home() {
               onMatchClick={handleLiveMatchClick}
               onOpenCompetition={handleOpenCompetition}
             />
-            <PreMatchSection onOpenCompetition={handleOpenCompetition} />
+            <PreMatchSection />
             {/* <TreasureSection /> */}
             {/* <WinningNowSection /> */}
           </Fragment>

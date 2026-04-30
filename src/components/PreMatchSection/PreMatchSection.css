@@ -459,3 +459,241 @@
   -webkit-touch-callout: none;
   user-select: none;
 }
+
+/* Home low-fidelity pre-match */
+#section-breve.prematch-section {
+  padding-bottom: 20px;
+}
+
+#section-breve .prematch-section__chip {
+  width: 104px;
+}
+
+#section-breve .prematch-section__chip--active {
+  width: 95px;
+}
+
+#section-breve .prematch-section__leagues {
+  gap: 0;
+}
+
+#section-breve .prematch-section__league {
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+#section-breve .prematch-section__league:not(.prematch-section__league--open) {
+  gap: 0;
+}
+
+#section-breve .prematch-section__league::after {
+  display: none;
+}
+
+#section-breve .prematch-section__league:not(.prematch-section__league--open)::after {
+  display: block;
+  left: 12px;
+  right: 12px;
+  background-color: #202020;
+}
+
+#section-breve .prematch-section__league--open {
+  margin-bottom: 20px;
+}
+
+#section-breve .prematch-section__league-header {
+  gap: 16px;
+  min-height: 32px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+}
+
+#section-breve .prematch-section__league:not(.prematch-section__league--open) .prematch-section__league-header {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+#section-breve .prematch-section__league--open + .prematch-section__league:not(.prematch-section__league--open) .prematch-section__league-header {
+  padding-top: 0;
+}
+
+#section-breve .prematch-section__league-title {
+  flex: 1;
+  gap: 4px;
+  min-width: 0;
+}
+
+#section-breve .prematch-section__league-title span {
+  display: block;
+  width: 228px;
+  max-width: 100%;
+  height: 16px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+#section-breve .prematch-section__league-flag,
+#section-breve .prematch-section__accordion-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  background-color: #1a1a1a;
+  border-radius: 0;
+  filter: none;
+  object-fit: none;
+  object-position: -9999px -9999px;
+}
+
+#section-breve .prematch-section__accordion-icon,
+#section-breve .prematch-section__accordion-icon--open {
+  transform: none;
+  transition: none;
+}
+
+#section-breve .prematch-section__matches {
+  gap: 8px;
+  padding: 0 12px;
+}
+
+#section-breve .prematch-section__match {
+  gap: 8px;
+  padding: 12px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+}
+
+#section-breve .prematch-section__match-header {
+  align-items: center;
+  gap: 8px;
+}
+
+#section-breve .prematch-section__teams-compact {
+  gap: 2px;
+}
+
+#section-breve .prematch-section__team-row {
+  height: 16px;
+  gap: 4px;
+}
+
+#section-breve .prematch-section__team-icon,
+#section-breve .prematch-section__team-icon--placeholder,
+#section-breve .prematch-section__team-icon--basketball-home,
+#section-breve .prematch-section__team-icon--basketball-away,
+#section-breve .prematch-section__team-icon--sport-home,
+#section-breve .prematch-section__team-icon--sport-away {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  padding: 0;
+  background-color: #202020;
+  border: none;
+  border-radius: 0;
+  filter: none;
+  object-fit: none;
+  object-position: -9999px -9999px;
+}
+
+#section-breve .prematch-section__team-name {
+  display: block;
+  width: 118px;
+  max-width: 100%;
+  height: 16px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+#section-breve .prematch-section__match-info {
+  gap: 8px;
+}
+
+#section-breve .prematch-section__match-info-content {
+  align-items: flex-end;
+  gap: 2px;
+  width: 90px;
+}
+
+#section-breve .prematch-section__match-info-content:not(.prematch-section__match-info-content--clickable)::before {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 16px;
+  background-color: #202020;
+}
+
+#section-breve .prematch-section__pag-antecipado {
+  width: 90px;
+  height: 16px;
+  background-color: #202020;
+}
+
+#section-breve .prematch-section__pag-antecipado-label,
+#section-breve .prematch-section__rei-antecipa {
+  display: none;
+}
+
+#section-breve .prematch-section__match-datetime {
+  display: block;
+  width: 53px;
+  height: 16px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+#section-breve .prematch-section__match-arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 0;
+  padding-left: 4px;
+  background-color: #202020;
+  border-left: 1px solid #202020;
+  filter: none;
+  object-fit: none;
+  object-position: -9999px -9999px;
+  box-sizing: content-box;
+}
+
+#section-breve .prematch-section__odds {
+  gap: 4px;
+}
+
+#section-breve .prematch-section__odd-btn {
+  height: 40px;
+  background-color: #202020;
+  border-radius: 8px;
+}
+
+#section-breve .prematch-section__odd-team,
+#section-breve .prematch-section__odd-value {
+  display: none;
+}
+
+#section-breve .prematch-section__more {
+  padding: 0 12px;
+  margin-top: -4px;
+}
+
+#section-breve .prematch-section__more-btn {
+  width: 152px;
+  height: 32px;
+  padding: 0;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 100px;
+}
+
+#section-breve .prematch-section__more-btn span,
+#section-breve .prematch-section__more-icon {
+  display: none;
+}

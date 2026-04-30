@@ -91,17 +91,7 @@
 }
 
 .competition-players__card-header::before {
-  content: '';
-  position: absolute;
-  top: 27px;
-  left: 50%;
-  width: 63px;
-  height: 63px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  filter: blur(20px);
-  transform: translateX(-50%);
-  pointer-events: none;
+  display: none;
 }
 
 .competition-players__match-row {
@@ -118,22 +108,33 @@
 }
 
 .competition-players__match-label {
-  color: #a8a8a8;
-  font-weight: 500;
+  display: block;
+  width: 42px;
+  height: 10px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
 }
 
 .competition-players__match-team--active {
-  color: #ffffff;
-  font-weight: 700;
+  color: transparent;
 }
 
 .competition-players__match-separator {
-  color: #a8a8a8;
-  font-weight: 500;
+  color: transparent;
 }
 
 .competition-players__match-time {
-  color: #a8a8a8;
+  display: block;
+  width: 46px;
+  height: 10px;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
 }
 
 .competition-players__player-image-wrapper {
@@ -142,29 +143,28 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: 92px;
-  height: 52px;
+  width: 148px;
+  height: 51px;
   overflow: hidden;
 }
 
 .competition-players__player-image {
-  position: relative;
-  width: auto;
-  height: 92px;
-  max-width: none;
-  transform: translate(var(--player-x, 0), var(--player-y, 0)) scale(var(--player-scale, 1));
-  transform-origin: top center;
-  z-index: 1;
+  display: none;
 }
 
 .competition-players__card-name {
-  padding: 0 12px;
+  width: 96px;
+  height: 14px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #202020;
+  align-self: center;
   font-family: 'Red Hat Text', sans-serif;
-  font-size: 12px;
+  font-size: 0;
   font-weight: 700;
-  color: #ffffff;
+  color: transparent;
   text-align: center;
-  line-height: 1.2;
+  line-height: 0;
 }
 
 .competition-players__card-options {
@@ -235,16 +235,9 @@
 }
 
 .competition-players__option-label {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 11px;
-  color: #ffffff;
-  line-height: 1.2;
+  display: none;
 }
 
 .competition-players__option-odd {
-  font-family: 'Red Hat Text', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
+  display: none;
 }

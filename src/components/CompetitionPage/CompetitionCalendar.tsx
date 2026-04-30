@@ -156,7 +156,7 @@ export function CompetitionCalendar({ sport, matches }: CompetitionCalendarProps
   }
 
   return (
-    <section className="prematch-section calendar-section competition-calendar">
+    <section className="prematch-section calendar-section calendar-section--low-fi competition-calendar">
       <div className="prematch-section__header">
         <div className="prematch-section__title">
           <span>Calendário</span>

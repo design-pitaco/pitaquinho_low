@@ -39,3 +39,45 @@
   align-self: flex-start;
   margin-top: 4px;
 }
+
+.competition-calendar.calendar-section--low-fi .competition-calendar__live-row {
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.competition-calendar.calendar-section--low-fi .calendar-section__tag-aovivo,
+.competition-calendar.calendar-section--low-fi .competition-calendar__live-time,
+.competition-calendar.calendar-section--low-fi .competition-calendar__score {
+  display: block;
+  overflow: hidden;
+  background-color: #202020;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.competition-calendar.calendar-section--low-fi .calendar-section__tag-aovivo {
+  width: 44px;
+  height: 16px;
+  padding: 0;
+  border-radius: 0;
+}
+
+.competition-calendar.calendar-section--low-fi .calendar-section__tag-aovivo span,
+.competition-calendar.calendar-section--low-fi .calendar-section__tag-icon-wrapper,
+.competition-calendar.calendar-section--low-fi .calendar-section__tag-icon-wrapper::before,
+.competition-calendar.calendar-section--low-fi .calendar-section__tag-icon {
+  display: none;
+}
+
+.competition-calendar.calendar-section--low-fi .competition-calendar__live-time {
+  width: 53px;
+  height: 16px;
+}
+
+.competition-calendar.calendar-section--low-fi .competition-calendar__score {
+  width: 32px;
+  height: 16px;
+  margin-left: auto;
+  border-radius: 4px;
+}

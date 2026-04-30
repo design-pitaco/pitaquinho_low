@@ -1123,6 +1123,14 @@ export function CalendarSection({
 
   const currentSport = topFive[0]?.sport ?? sportFilter
   const currentMarketChips = currentSport === 'basquete' ? basketballMarketChips : footballMarketChips
+  const sectionClassName = [
+    'prematch-section',
+    'calendar-section',
+    sportFilter ? 'calendar-section--low-fi' : '',
+    isCompetitionPage ? 'calendar-section--competition' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   const openCompetitionFromLeague = (leagueId: string) => {
     const target = getCompetitionLinkTarget(leagueId)
@@ -1211,7 +1219,7 @@ export function CalendarSection({
   }
 
   return (
-    <section className={`prematch-section calendar-section${isCompetitionPage ? ' calendar-section--competition' : ''}`}>
+    <section className={sectionClassName}>
       {/* Header */}
       <div className="prematch-section__header">
         <div className="prematch-section__title">
